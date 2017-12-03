@@ -1,4 +1,4 @@
--- --------------------------------------------------------
+﻿-- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
 -- Versão do servidor:           10.1.13-MariaDB - mariadb.org binary distribution
 -- OS do Servidor:               Win32
@@ -19,7 +19,7 @@ USE `sistemavendaa`;
 -- Copiando estrutura para tabela sistemavendaa.cargo
 CREATE TABLE IF NOT EXISTS `cargo` (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
-  `descricao` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `descricao` varchar(50) COLLATE utf8_bin DEFAULT NULL,
   `objetivo` varchar(100) COLLATE utf8_bin DEFAULT NULL,
   `salario` float DEFAULT NULL,
   PRIMARY KEY (`codigo`)
@@ -32,8 +32,8 @@ CREATE TABLE IF NOT EXISTS `cargo` (
 -- Copiando estrutura para tabela sistemavendaa.categoriaproduto
 CREATE TABLE IF NOT EXISTS `categoriaproduto` (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `descricao` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `nome` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `descricao` varchar(70) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `categoriaproduto` (
 -- Copiando estrutura para tabela sistemavendaa.cliente
 CREATE TABLE IF NOT EXISTS `cliente` (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `nome` varchar(50) COLLATE utf8_bin DEFAULT NULL,
   `sexo` varchar(50) COLLATE utf8_bin DEFAULT NULL,
   `endereco` varchar(120) COLLATE utf8_bin DEFAULT NULL,
   `numero` int(11) DEFAULT NULL,
@@ -64,17 +64,16 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela sistemavendaa.entrada
-CREATE TABLE IF NOT EXISTS `entrada` (
+CREATE TABLE IF NOT EXISTS `compra` (
   `codigo` int(11) NOT NULL AUTO_INCREMENT,
-  `nomeproduto` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `categoriaproduto` varchar(100) COLLATE utf8_bin DEFAULT NULL,
-  `saldoInicial` int(11) DEFAULT NULL,
-  `saldoCompra` int(11) DEFAULT NULL,
-  `saldoSaida` int(11) DEFAULT NULL,
-  `saldoEntrada` int(11) DEFAULT NULL,
+  `data` date() COLLATE utf8_bin DEFAULT NULL,
+  `codigoFornecedor` int(11) COLLATE utf8_bin DEFAULT NULL,
+  `quantidade` int(11) DEFAULT NULL,
+  `codigoProduto` int(11) DEFAULT NULL,
+  `preco` float() DEFAULT NULL,
   PRIMARY KEY (`codigo`),
-  KEY `CategoriaProduto` (`categoriaproduto`),
-  KEY `nomeProduto` (`nomeproduto`)
+  KEY `CodigoForncedor` (`codigofornecedor`),
+  KEY `CodigoProduto` (`codigoproduto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- Copiando dados para a tabela sistemavendaa.entrada: ~0 rows (aproximadamente)
