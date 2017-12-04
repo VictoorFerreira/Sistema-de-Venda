@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   `estado` varchar(100) COLLATE utf8_bin DEFAULT NULL,
   `telefone` varchar(15) COLLATE utf8_bin DEFAULT NULL,
   `celular` varchar(15) COLLATE utf8_bin DEFAULT NULL,
-  `email` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `email` varchar(150) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `fornecedor` (
   `estado` varchar(100) COLLATE utf8_bin DEFAULT NULL,
   `telefone` varchar(14) COLLATE utf8_bin DEFAULT NULL,
   `celular` varchar(15) COLLATE utf8_bin DEFAULT NULL,
-  `email` varchar(120) COLLATE utf8_bin DEFAULT NULL,
+  `email` varchar(150) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -128,11 +128,11 @@ CREATE TABLE IF NOT EXISTS `funcionarios` (
   `estado` varchar(100) COLLATE utf8_bin DEFAULT NULL,
   `telefone` int(11) DEFAULT NULL,
   `celular` int(11) DEFAULT NULL,
-  `email` varchar(120) COLLATE utf8_bin DEFAULT NULL,
+  `email` varchar(150) COLLATE utf8_bin DEFAULT NULL,
   `carteiraTrabalho` int(11) DEFAULT NULL,
   `dataContratacao` date DEFAULT NULL,
   `dataTermino` date DEFAULT NULL,
-  `cargo` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `cargo` varchar(70) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`codigo`),
   KEY `cargo` (`cargo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
