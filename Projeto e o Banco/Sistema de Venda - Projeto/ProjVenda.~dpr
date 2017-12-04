@@ -1,0 +1,27 @@
+program ProjVenda;
+
+uses
+  Forms,
+  RelVenda in 'RelVenda.pas' {F_RelVenda},
+  Unit1Login in 'Unit1Login.pas' {Form1Login},
+  Unit2Menu in 'Unit2Menu.pas' {Form2Menu},
+  Unit3Cargo in 'Unit3Cargo.pas' {Form3Cargo},
+  Unit4Funcionario in 'Unit4Funcionario.pas' {Form4Funcionario},
+  Unit5Cliente in 'Unit5Cliente.pas' {Form5Cliente},
+  Unit6CategoriaProduto in 'Unit6CategoriaProduto.pas' {Form6CategoriaProduto},
+  Unit7Produto in 'Unit7Produto.pas' {Form7Produto},
+  Unit8Estoque in 'Unit8Estoque.pas' {Form8Estoque},
+  Unit9FormaPagamento in 'Unit9FormaPagamento.pas' {Form9FormaPagamento},
+  Unit10Venda in 'Unit10Venda.pas' {Form10Venda},
+  Unit11Fornecedor in 'Unit11Fornecedor.pas' {Form11Fornecedor},
+  Unit13DataModule in 'Unit13DataModule.pas' {DataModule1: TDataModule},
+  Unit15RelVenda in 'Unit15RelVenda.pas' {FormRelVenda},
+  URelCompra in 'URelCompra.pas' {F_RelCompra};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm2Menu, Form2Menu);
+  Application.Run;
+end.

@@ -1,0 +1,422 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  Left = 873
+  Top = 268
+  Height = 400
+  Width = 487
+  object DSCargo: TDataSource
+    DataSet = TCargo
+    Left = 40
+    Top = 16
+  end
+  object DSFuncionario: TDataSource
+    DataSet = TFuncionario
+    Left = 40
+    Top = 88
+  end
+  object DSCliente: TDataSource
+    DataSet = TCliente
+    Left = 40
+    Top = 168
+  end
+  object DSCategoriaProduto: TDataSource
+    DataSet = TCategoriaProduto
+    Left = 40
+    Top = 240
+  end
+  object DSProduto: TDataSource
+    DataSet = TProduto
+    Left = 256
+    Top = 16
+  end
+  object DSCompra: TDataSource
+    DataSet = TCompra
+    Left = 256
+    Top = 96
+  end
+  object DSVenda: TDataSource
+    DataSet = TVenda
+    Left = 256
+    Top = 168
+  end
+  object DSFormaPagamento: TDataSource
+    DataSet = TFormaPagamento
+    Left = 256
+    Top = 240
+  end
+  object TCargo: TTable
+    Active = True
+    AfterPost = TCargoAfterPost
+    AfterDelete = TCargoAfterPost
+    DatabaseName = 'STANDARD2'
+    TableName = 'Cargo.db'
+    Left = 136
+    Top = 16
+    object TCargoCodigo: TAutoIncField
+      FieldName = 'Codigo'
+      ReadOnly = True
+    end
+    object TCargoDescricao: TStringField
+      FieldName = 'Descricao'
+      Size = 50
+    end
+    object TCargoObjetivo: TStringField
+      FieldName = 'Objetivo'
+      Size = 50
+    end
+    object TCargoSalario: TBCDField
+      FieldName = 'Salario'
+      Precision = 32
+      Size = 2
+    end
+  end
+  object TCliente: TTable
+    Active = True
+    AfterPost = TClienteAfterPost
+    AfterDelete = TClienteAfterPost
+    DatabaseName = 'STANDARD2'
+    TableName = 'Cliente.DB'
+    Left = 136
+    Top = 168
+    object TClienteCodigo: TAutoIncField
+      FieldName = 'Codigo'
+      ReadOnly = True
+    end
+    object TClienteNome: TStringField
+      FieldName = 'Nome'
+      Size = 50
+    end
+    object TClienteSexo: TStringField
+      FieldName = 'Sexo'
+      Size = 50
+    end
+    object TClienteRg: TStringField
+      FieldName = 'Rg'
+      Size = 10
+    end
+    object TClienteCpf: TStringField
+      FieldName = 'Cpf'
+      Size = 15
+    end
+    object TClienteEndereco: TStringField
+      FieldName = 'Endereco'
+      Size = 100
+    end
+    object TClienteNumero: TFloatField
+      FieldName = 'Numero'
+    end
+    object TClienteBairro: TStringField
+      FieldName = 'Bairro'
+      Size = 50
+    end
+    object TClienteCep: TStringField
+      FieldName = 'Cep'
+      Size = 9
+    end
+    object TClienteComplemento: TStringField
+      FieldName = 'Complemento'
+      Size = 35
+    end
+    object TClienteCidade: TStringField
+      FieldName = 'Cidade'
+      Size = 50
+    end
+    object TClienteEstado: TStringField
+      FieldName = 'Estado'
+      Size = 50
+    end
+    object TClienteTelefone: TFloatField
+      FieldName = 'Telefone'
+    end
+    object TClienteCelular: TFloatField
+      FieldName = 'Celular'
+    end
+    object TClienteEmail: TStringField
+      FieldName = 'Email'
+      Size = 150
+    end
+  end
+  object TCategoriaProduto: TTable
+    Active = True
+    AfterPost = TCategoriaProdutoAfterPost
+    AfterDelete = TCategoriaProdutoAfterPost
+    DatabaseName = 'STANDARD2'
+    TableName = 'CategoriaProduto.db'
+    Left = 65512
+    Top = 280
+    object TCategoriaProdutoCodigo: TAutoIncField
+      FieldName = 'Codigo'
+      ReadOnly = True
+    end
+    object TCategoriaProdutoNome: TStringField
+      FieldName = 'Nome'
+      Size = 50
+    end
+    object TCategoriaProdutoDescricao: TStringField
+      FieldName = 'Descricao'
+      Size = 70
+    end
+  end
+  object TProduto: TTable
+    Active = True
+    AfterPost = TProdutoAfterPost
+    AfterDelete = TProdutoAfterPost
+    DatabaseName = 'STANDARD2'
+    TableName = 'Produto.DB'
+    Left = 352
+    Top = 16
+    object TProdutoCodigo: TAutoIncField
+      FieldName = 'Codigo'
+      ReadOnly = True
+    end
+    object TProdutoNome: TStringField
+      FieldName = 'Nome'
+      Size = 50
+    end
+    object TProdutoDescricao: TStringField
+      FieldName = 'Descricao'
+      Size = 70
+    end
+    object TProdutoQuantidade: TFloatField
+      FieldName = 'Quantidade'
+    end
+    object TProdutoPreco: TBCDField
+      FieldName = 'Preco'
+      Precision = 32
+      Size = 2
+    end
+    object TProdutoCategoriaProduto: TIntegerField
+      FieldName = 'CategoriaProduto'
+    end
+  end
+  object TCompra: TTable
+    Active = True
+    AfterPost = TCompraAfterPost
+    AfterDelete = TCompraAfterPost
+    DatabaseName = 'STANDARD2'
+    TableName = 'Compra.DB'
+    Left = 352
+    Top = 96
+    object TCompraCodigo: TAutoIncField
+      FieldName = 'Codigo'
+      ReadOnly = True
+    end
+    object TCompraData: TDateField
+      FieldName = 'Data'
+    end
+    object TCompraCodigoFornecedor: TIntegerField
+      FieldName = 'CodigoFornecedor'
+    end
+    object TCompraCodigoProduto: TIntegerField
+      FieldName = 'CodigoProduto'
+    end
+    object TCompraQuantidade: TFloatField
+      FieldName = 'Quantidade'
+    end
+    object TCompraPreco: TBCDField
+      FieldName = 'Preco'
+      Precision = 32
+      Size = 2
+    end
+  end
+  object TVenda: TTable
+    Active = True
+    AfterPost = TVendaAfterPost
+    AfterDelete = TVendaAfterPost
+    DatabaseName = 'STANDARD2'
+    TableName = 'Venda.DB'
+    Left = 352
+    Top = 168
+    object TVendaData: TDateField
+      FieldName = 'Data'
+      EditMask = '##/##/####;1;_'
+    end
+    object TVendaHorario: TTimeField
+      FieldName = 'Horario'
+      EditMask = '!90:00;1;_'
+    end
+    object TVendaQuantidadeProduto: TFloatField
+      FieldName = 'QuantidadeProduto'
+    end
+    object TVendaPreco: TBCDField
+      FieldName = 'Preco'
+      Precision = 32
+      Size = 2
+    end
+    object TVendaCodigoProduto: TIntegerField
+      FieldName = 'CodigoProduto'
+    end
+    object TVendaCliente: TIntegerField
+      FieldName = 'Cliente'
+    end
+    object TVendaFormaPagamento: TIntegerField
+      FieldName = 'FormaPagamento'
+    end
+    object TVendaCodigoFuncionario: TIntegerField
+      FieldName = 'CodigoFuncionario'
+    end
+    object TVendaCodigo: TAutoIncField
+      FieldName = 'Codigo'
+      ReadOnly = True
+    end
+  end
+  object TFormaPagamento: TTable
+    Active = True
+    AfterPost = TFormaPagamentoAfterPost
+    AfterDelete = TFormaPagamentoAfterPost
+    DatabaseName = 'STANDARD2'
+    TableName = 'FormaPagamento.db'
+    Left = 352
+    Top = 240
+    object TFormaPagamentoCodigo: TAutoIncField
+      FieldName = 'Codigo'
+      ReadOnly = True
+    end
+    object TFormaPagamentoNome: TStringField
+      FieldName = 'Nome'
+      Size = 50
+    end
+    object TFormaPagamentoDescricao: TStringField
+      FieldName = 'Descricao'
+      Size = 70
+    end
+  end
+  object TFornecedor: TTable
+    Active = True
+    AfterPost = TFornecedorAfterPost
+    AfterDelete = TFornecedorAfterPost
+    DatabaseName = 'STANDARD2'
+    TableName = 'Fornecedor.db'
+    Left = 352
+    Top = 312
+    object TFornecedorCodigo: TAutoIncField
+      FieldName = 'Codigo'
+      ReadOnly = True
+    end
+    object TFornecedorNome: TStringField
+      FieldName = 'Nome'
+      Size = 50
+    end
+    object TFornecedorSexo: TStringField
+      FieldName = 'Sexo'
+      Size = 50
+    end
+    object TFornecedorEndereco: TStringField
+      FieldName = 'Endereco'
+      Size = 100
+    end
+    object TFornecedorNumero: TFloatField
+      FieldName = 'Numero'
+    end
+    object TFornecedorBairro: TStringField
+      FieldName = 'Bairro'
+      Size = 50
+    end
+    object TFornecedorCnpj: TFloatField
+      FieldName = 'Cnpj'
+    end
+    object TFornecedorCidade: TStringField
+      FieldName = 'Cidade'
+      Size = 50
+    end
+    object TFornecedorEstado: TStringField
+      FieldName = 'Estado'
+      Size = 50
+    end
+    object TFornecedorTelefone: TFloatField
+      FieldName = 'Telefone'
+    end
+    object TFornecedorCelular: TFloatField
+      FieldName = 'Celular'
+    end
+    object TFornecedorEmail: TStringField
+      FieldName = 'Email'
+      Size = 150
+    end
+  end
+  object DSFornecedor: TDataSource
+    DataSet = TFornecedor
+    Left = 256
+    Top = 312
+  end
+  object TFuncionario: TTable
+    AfterPost = TFuncionarioAfterPost
+    AfterDelete = TFuncionarioAfterPost
+    DatabaseName = 'STANDARD2'
+    TableName = 'Funcionario.DB'
+    Left = 136
+    Top = 96
+    object TFuncionarioCodigo: TAutoIncField
+      FieldName = 'Codigo'
+      ReadOnly = True
+    end
+    object TFuncionarioNome: TStringField
+      FieldName = 'Nome'
+      Size = 50
+    end
+    object TFuncionarioSexo: TStringField
+      FieldName = 'Sexo'
+      Size = 50
+    end
+    object TFuncionarioRg: TStringField
+      FieldName = 'Rg'
+      Size = 10
+    end
+    object TFuncionarioCpf: TStringField
+      FieldName = 'Cpf'
+      Size = 15
+    end
+    object TFuncionarioEndereco: TStringField
+      FieldName = 'Endereco'
+      Size = 100
+    end
+    object TFuncionarioNumero: TFloatField
+      FieldName = 'Numero'
+    end
+    object TFuncionarioBairro: TStringField
+      FieldName = 'Bairro'
+      Size = 50
+    end
+    object TFuncionarioCep: TStringField
+      FieldName = 'Cep'
+      Size = 10
+    end
+    object TFuncionarioComplemento: TStringField
+      FieldName = 'Complemento'
+      Size = 35
+    end
+    object TFuncionarioCidade: TStringField
+      FieldName = 'Cidade'
+      Size = 50
+    end
+    object TFuncionarioEstado: TStringField
+      FieldName = 'Estado'
+      Size = 50
+    end
+    object TFuncionarioTelefone: TFloatField
+      FieldName = 'Telefone'
+    end
+    object TFuncionarioCelular: TFloatField
+      FieldName = 'Celular'
+    end
+    object TFuncionarioEmail: TStringField
+      FieldName = 'Email'
+      Size = 150
+    end
+    object TFuncionarioCarteiraTrabalho: TStringField
+      FieldName = 'CarteiraTrabalho'
+      Size = 15
+    end
+    object TFuncionarioDataContratacao: TDateField
+      FieldName = 'DataContratacao'
+    end
+    object TFuncionarioDataTermino: TDateField
+      FieldName = 'DataTermino'
+    end
+    object TFuncionarioCargo: TIntegerField
+      FieldName = 'Cargo'
+    end
+  end
+end
